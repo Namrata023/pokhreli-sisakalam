@@ -135,5 +135,74 @@ body {
 
     .product-grid { grid-template-columns: 1fr; }
     .event-featured { flex-direction: column; text-align: center; padding: 20px; }
+    .story-wrapper { flex-direction: column; text-align: center; }
+    .story-image img { box-shadow: 10px 10px 0px var(--accent); }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
     .footer-content { flex-direction: column; gap: 30px; text-align: center; }
+}
+
+.bg-alt { background-color: #f4f7f4; border-radius: 50px; }
+
+.story-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.story-content { flex: 1; }
+.story-image { flex: 1; }
+.story-image img { width: 100%; border-radius: 30px; box-shadow: 20px 20px 0px var(--accent); }
+.story-stats { display: flex; gap: 30px; margin-top: 30px; }
+.stat-item strong { display: block; font-size: 2rem; color: var(--primary); }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.feat-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 5px solid var(--primary);
+}
+
+.feat-card h4 {
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
 }
