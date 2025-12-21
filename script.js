@@ -1,23 +1,34 @@
+function initMobileMenu() {
+    const menuToggle = document.querySelector('#mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links a');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+}
+
 function startEventSlider(className) {
     let currentIndex = 0;
     const items = document.querySelectorAll(className);
-
-    // Ensure we have items before starting the timer
     if (items.length === 0) return;
 
     setInterval(() => {
-        // Remove active class from current item
         items[currentIndex].classList.remove('active');
-
-        // Move to next index
         currentIndex = (currentIndex + 1) % items.length;
-
-        // Add active class to new item
         items[currentIndex].classList.add('active');
-    }, 4000); // 4 seconds for readability
+    }, 4000);
 }
 
-// Start only the event slider when the page loads
 document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
     startEventSlider('.event-item');
 });
