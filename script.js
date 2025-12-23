@@ -52,6 +52,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const alternates = document.querySelectorAll('.alternate-container');
+    alternates.forEach(container => {
+        const imgs = container.querySelectorAll('.alt-img');
+        let currentAlt = 0;
+        if (imgs.length > 0) {
+            setInterval(() => {
+                imgs[currentAlt].classList.remove('active');
+                currentAlt = (currentAlt + 1) % imgs.length;
+                imgs[currentAlt].classList.add('active');
+            }, 3000);
+        }
+    });
+
+    const slideshows = document.querySelectorAll('.slideshow-container');
+    slideshows.forEach(container => {
+        const slides = container.querySelectorAll('.slide');
+        let currentSlide = 0;
+        if (slides.length > 0) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 2500);
+        }
+    });
+
     const yearSpan = document.getElementById('year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
