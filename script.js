@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const productSection = document.getElementById('products');
+        if (productSection) {
+            productSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 6000);
+
     const menuToggle = document.querySelector('#mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links a');
@@ -38,6 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.style.display = 'flex';
             lightboxImg.src = e.target.src;
             document.body.style.overflow = 'hidden';
+        } else if (e.target.classList.contains('image-wrapper')) {
+            const activeImg = e.target.querySelector('img.active');
+            if (activeImg) {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = activeImg.src;
+                document.body.style.overflow = 'hidden';
+            }
         }
     });
 
