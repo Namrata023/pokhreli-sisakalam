@@ -46,14 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'auto';
     };
 
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeLightbox);
-    }
-
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox || e.target === closeBtn) {
-            closeLightbox();
-        }
+        if (e.target === lightbox) closeLightbox();
     });
 
     const alternates = document.querySelectorAll('.alternate-container');
@@ -87,7 +82,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
